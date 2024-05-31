@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_census_data_ratios
+    description: this table gives ratios for demographic to total population, at the county/year grain
+    columns:
+      - name: uid
+        tests:
+          - unique
+          - not_null
+      - name: turnout
+        description: calcuation = total votes / total population
+  - name: stg_election_meta
+    description: subjective qualifiers for each election
+    columns:
+      - name: hard_incumbent 
+        description: if the candidate is currently the incumbent
+      - name: soft_incumbent
+        description: if the candidate oarty is currently in office
+      - name: person_scandal_index
+        description: scale of 1 - 10 of how toxic a candidate is seen by the public due to personal scandal
+      - name: presidential_scandal_index
+        description: on how sacandal ridden the incumbents term was
+      - name: unpopular war
+        description: on if incumbent owns an unpopular war
+  - name: stg_election_results_county
+    description: county level election results
+  - name: stg_538_poll_avg
+    description: fivethirtyeights polling average, by state, by day
+  - name: stg_consumer_sentiment_avg
+    description: this is the FRED measured volatility index, by year
+    columns:
+      - name: avg_volatility
+        description: average volatility per term
+      - name: avg_volatility_percent_change
+        description: the 4 year average change
+      - name: std_volatiilty 
+        description: this is the standard deviation of volatlity
+  - name: stg_urr_avg
+    description: Unemployment rate by state, with the same  metric format as volatility
+  - name: stg_nasdaq
+    description: nasdaq index, measured in the same way as volatility
+  - name: stg_cpi
+    description: CPI index, measured in the same way as volatility 
+  - name: stg_consumer_sentiment
+    description: Consumer Sentiment index, measured in the same way as volatility 
+
+              
+              
