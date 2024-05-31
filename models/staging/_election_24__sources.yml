@@ -1,20 +1,29 @@
 version: 2
 sources:
   - name: demo_data
+    description: demographic data
     database: postgres
     schema: pres_election
     tables:
       - name: census_data
+        description: raw census data
       - name: countypres
+        description: raw vote data at county level
       - name: fivethirtyeight_pres_poll_avg
+        description: raw 538 polling data
       - name: election_party_meta
+        description: subjective metadata about candidates
       - name: pres_terms
+        description: who was president for each term with years
   - name: econ_data
+    description: economic metrics for both state and nation level
     database: postgres
     schema: pres_election
     tables:
       - name: cpi
+        description: the consumer price index
       - name: nasdaq
+        description: NASDAQ index
       - name: unemployment
       - name: volatility
       - name: consumer_sentiment

@@ -5,6 +5,7 @@ models:
     description: this table gives ratios for demographic to total population, at the county/year grain
     columns:
       - name: uid
+        description: combines FIPS and year as a UID
         tests:
           - unique
           - not_null
