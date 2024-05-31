@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: demo_data
+    database: postgres
+    schema: pres_election
+    tables:
+      - name: census_data
+      - name: countypres
+      - name: fivethirtyeight_pres_poll_avg
+      - name: election_party_meta
+      - name: pres_terms
+  - name: econ_data
+    database: postgres
+    schema: pres_election
+    tables:
+      - name: cpi
+      - name: nasdaq
+      - name: unemployment
+      - name: volatility
+      - name: consumer_sentiment
