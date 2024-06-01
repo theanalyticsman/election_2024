@@ -35,6 +35,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+vars:
+  source_schema: 'pres_election_source'
+  stage_schema: 'pres_election_stg'
+  model_schema: 'pres_election'
+  global_shcema: 'public'
+
 models:
   election_2024_model:
     # Applies to all files under models/example/

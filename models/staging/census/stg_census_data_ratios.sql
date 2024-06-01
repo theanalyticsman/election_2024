@@ -1,3 +1,8 @@
+{{ config(
+    schema=var('stage_schema')
+) }}
+
+
 SELECT 
 	"FIPS" || '-' || "YEAR" AS uid,
 	CASE WHEN "YEAR" = 2009 THEN 2008 ELSE "YEAR" END as year,
@@ -15,4 +20,4 @@ SELECT
 	"RATIO_HISPANIC" as RATIO_HISPANIC,
 	"RATIO_POPULATION_BLACK_ALL" as RATIO_POPULATION_BLACK_ALL,
 	"RATIO_POPULATION_DEGREE" as RATIO_POPULATION_DEGREE
-FROM {{ source('demo_data', 'census_data') }}
+FROM {{ source('source_data', 'census_data') }}

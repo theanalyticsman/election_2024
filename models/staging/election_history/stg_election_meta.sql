@@ -1,3 +1,7 @@
+{{ config(
+    schema=var('stage_schema')
+) }}
+
 SELECT 
 	"YEAR" as year,
 	"PARTY" as party,
@@ -8,4 +12,4 @@ SELECT
 	"UNPOPULAR_WAR" as UNPOPULAR_WAR,
     campaign_individual, 
     campaign_total
-FROM {{ source('demo_data', 'election_party_meta') }}
+FROM {{ source('source_data', 'election_party_meta') }}
