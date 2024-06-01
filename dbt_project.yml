@@ -36,10 +36,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 vars:
-  source_schema: 'pres_election_source'
-  stage_schema: 'pres_election_stg'
-  model_schema: 'pres_election'
-  global_shcema: 'public'
+  source_schema: 'source'
+  stage_schema: 'stg'
+  model_schema: 'mdl'
 
 models:
   election_2024_model:
