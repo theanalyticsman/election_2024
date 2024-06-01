@@ -66,6 +66,8 @@ SELECT
 	b.PERSONAL_SCANDAL_INDEX,
 	b.PRESIDENTIAL_SCANDAL_INDEX,
 	b.UNPOPULAR_WAR,
+    b.campaign_individual,
+    b.campaign_total ,
     c.population_total,	
     c.income_median_income_12_month,	
     c.population_density,
