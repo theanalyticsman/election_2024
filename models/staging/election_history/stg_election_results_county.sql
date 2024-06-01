@@ -1,3 +1,7 @@
+{{ config(
+    schema=var('stage_schema')
+) }}
+
 SELECT 
 	YEAR, 
 	state, 
@@ -12,7 +16,7 @@ SELECT
 	SUM(candidatevotes) AS candidatevotes,
 	AVG(totalvotes) AS totalvotes,
     SUM(CAST(candidatevotes as FLOAT)) / AVG(CAST(totalvotes as FLOAT)) as vote_share
-FROM {{ source('demo_data', 'countypres') }}
+FROM {{ source('source_data', 'countypres') }}
 WHERE length(county_fips) < 7	
     AND totalvotes > 0
 GROUP BY

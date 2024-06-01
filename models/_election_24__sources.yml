@@ -1,9 +1,9 @@
 version: 2
 sources:
-  - name: demo_data
+  - name: source_data
     description: demographic data
     database: postgres
-    schema: pres_election
+    schema: pres_election_source
     tables:
       - name: census_data
         description: raw census data
@@ -15,11 +15,6 @@ sources:
         description: subjective metadata about candidates
       - name: pres_terms
         description: who was president for each term with years
-  - name: econ_data
-    description: economic metrics for both state and nation level
-    database: postgres
-    schema: pres_election
-    tables:
       - name: cpi
         description: the consumer price index
       - name: nasdaq
@@ -27,3 +22,11 @@ sources:
       - name: unemployment
       - name: volatility
       - name: consumer_sentiment
+
+  - name: model_data
+    description: created dimension tables
+    database: postgres
+    schema: pres_election
+    tables:
+      - name: dim_election_data
+        description: substantiated table from dim_election_data.sql

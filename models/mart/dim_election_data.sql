@@ -1,3 +1,7 @@
+{{ config(
+    schema=var('model_schema')
+) }}
+
 with 
 
 election_results as
